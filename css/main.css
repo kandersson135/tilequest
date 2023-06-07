@@ -121,34 +121,38 @@ body {
 
 /* MODAL BOX */
 .swal-modal {
-  background:#fafafa;
-  box-shadow:inset 0 45px 1px 0 #5a5a59;
-  border:5px solid #5a5a59;
-  border-radius: 0px;
+  background:#bdaa97;
+  box-shadow:inset 2px 2px 2px 0 #353540;
+  border:2px solid #eee4da;
+  border-radius: 3px;
   width: 350px;
   margin-top: -220px;
 }
 
 .swal-title {
-  color:#fff;
-  font-family: 'Dokdo', cursive;
-  font-weight:normal;
-  font-size: 32px;
-  margin-top:-10px !important;
+	background: #353540;
+	border:2px solid #eee4da;
+	border-radius: 3px;
+	color:#fff;
+	font-family: 'Dokdo', cursive;
+	font-weight:normal;
+	font-size: 32px;
+	margin: 0 auto;
+	margin-top:-30px !important;
+	width:180px;
 }
 
 .swal-text {
-  color:#2f2f2e;
+  color:#353540;
   font-family: 'Dokdo', cursive;
   font-size:24px;
 }
 
 .swal-button {
-	background: #5a5a59;
-	background: linear-gradient(to bottom, #2f2f2e, #5a5a59);
-	box-shadow:inset 0px 28px 1px 0 rgba(500,500,500,0.1);
-	border:2px solid #5a5a59;
-	border-radius:0px;
+	background: #353540;
+	box-shadow:inset 0px 5px 1px 0 rgba(500,500,500,0.1);
+	border:2px solid #eee4da;
+	border-radius:3px;
 	color:#fff;
 	font-family: 'Dokdo', cursive;
 	font-weight:normal;
@@ -156,7 +160,8 @@ body {
 	padding:5px 20px;
 	cursor: url(../img/cursor.png), auto;
 }
-.swal-button:focus {box-shadow:inset 0px 28px 1px 0 rgba(500,500,500,0.1);}
+.swal-button:focus {box-shadow:inset 0px 5px 1px 0 rgba(500,500,500,0.1);}
+.swal-button:hover {background:#353540 !important;}
 .swal-button:active {position:relative; top:3px;}
 
 /* iPad styles */
