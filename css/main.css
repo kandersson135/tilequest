@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+
+body {
+	background: #2f2f2e url(../img/cross-stripes.png);
+	cursor: url(../img/cursor.png), auto;
+}
+
+#game-bg {
+    display: flex;
+    flex-wrap: wrap;
+    width: 544px;
+    height: 544px;
+    margin: 20px auto;
+    background-image: url(../img/map.png);
+    background-size: contain;
+    position: relative;
+    z-index: 1;
+}
+.game-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    height: 480px;
+    margin: 20px auto;
+    margin-top: 32px;
+    background-size: contain;
+    position: relative;
+}
+
+.tile {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	cursor: url(../img/cursor.png), auto;
+}
+
+
+.teacher {
+    background-image: url(../img/hero-idle.gif);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+    width: 32px;
+    height: 32px;
+}
+
+.enemy {
+    background-image: url(../img/green-slime.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+.life-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.life-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/heart.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+
+#level-display {
+  color: #fff;
+  font-family: 'Dokdo', cursive;
+  font-size: 32px;
+  position: absolute;
+  right: 200px;
+  top: 100px;
+}
+
+#game-title {
+  color: #fff;
+  font-family: 'Dokdo', cursive;
+  font-size: 45px;
+  position: absolute;
+  left: 100px;
+  top: 30px;
+}
+
+#game-subtitle {
+  color: yellow;
+  font-family: 'Dokdo', cursive;
+  font-size: 24px;
+  position: absolute;
+  left: 115px;
+  top: 80px;
+}
+
+#how-to-play {
+	color: #fff;
+	font-family: 'Dokdo', cursive;
+	font-size: 18px;
+	position: absolute;
+	top: 130px;
+	left:100px;
+	width:250px;
+}
+
+#version-info {
+  bottom: 0px;
+  color: #fff;
+  font-family: 'Dokdo', cursive;
+  font-size: 10px;
+  position: absolute;
+  text-shadow: 1px 1px 0 #555;
+}
+
+/* MODAL BOX */
+.swal-modal {
+  background:#fafafa;
+  box-shadow:inset 0 45px 1px 0 #5a5a59;
+  border:5px solid #5a5a59;
+  border-radius: 0px;
+  width: 350px;
+  margin-top: -220px;
+}
+
+.swal-title {
+  color:#fff;
+  font-family: 'Dokdo', cursive;
+  font-weight:normal;
+  font-size: 32px;
+  margin-top:-10px !important;
+}
+
+.swal-text {
+  color:#2f2f2e;
+  font-family: 'Dokdo', cursive;
+  font-size:24px;
+}
+
+.swal-button {
+	background: #5a5a59;
+	background: linear-gradient(to bottom, #2f2f2e, #5a5a59);
+	box-shadow:inset 0px 28px 1px 0 rgba(500,500,500,0.1);
+	border:2px solid #5a5a59;
+	border-radius:0px;
+	color:#fff;
+	font-family: 'Dokdo', cursive;
+	font-weight:normal;
+	font-size:24px;
+	padding:5px 20px;
+	cursor: url(../img/cursor.png), auto;
+}
+.swal-button:focus {box-shadow:inset 0px 28px 1px 0 rgba(500,500,500,0.1);}
+.swal-button:active {position:relative; top:3px;}

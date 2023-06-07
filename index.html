@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TileQuest: Dungeon Escape</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="theme-color" content="#2f2f2e">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="img/webapp-icon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	
+	<!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <div id="game-bg">
+      <div class="game-board">
+      </div><!--end game-board -->
+    </div><!-- end game-bg -->
+    
+    <h1 id="game-title">TileQuest:</h1>
+    <h2 id="game-subtitle">Dungeon Escape</h2>
+	<p id="how-to-play">
+		How to play:<br>
+		Play as the hero and try to escape all levels of the dungeon.<br>
+		Click on the tile next to the hero to move him there.<br>
+		Everytime the hero makes a move, the slimes move one step closer to the hero.<br>
+		If a slime is two tiles away from the hero, he can attack it by clicking it.<br>
+		Make your way through the slimes and try to beat all levels.
+	</p>
+    <div id="level-display"></div>
+    <div class="life-container"></div>
+	
+	<div id="version-info">
+		<p>Version: 0.0.3</p>
+    </div>
+	
+	<!-- js -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/sweetalert.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
