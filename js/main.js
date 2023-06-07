@@ -31,7 +31,7 @@ $(document).ready(function() {
     updateLives();
     
     // Display current level
-    $('#level-display').text("Level: " + level + "/99");
+    $('#level-display').text("Level: " + level + "/10");
 	
     // Handle tile click event
     $('.tile').click(function() {
@@ -150,11 +150,11 @@ $(document).ready(function() {
 
         if (teacherPosition.row === boardSize - 1 && teacherPosition.col === boardSize - 1) {
             // Level up condition
-            if (level === 99) {
+            if (level === 10) {
                 // Final level completed
                 //alert('Congratulations! You completed all levels!');
 				swal({
-				  title: "Congratulations!",
+				  title: "Good job!",
 				  text: "You completed all levels!",
 				});
                 resetGame();
@@ -216,7 +216,7 @@ $(document).ready(function() {
 
         $('.tile').empty();
         
-        $('#level-display').text("Level: " + level + "/99");
+        $('#level-display').text("Level: " + level + "/10");
 
         // Generate enemies at random positions
         generateEnemies();
@@ -234,7 +234,7 @@ $(document).ready(function() {
 
         $('.tile').empty();
         
-        $('#level-display').text("Level: " + level + "/99");
+        $('#level-display').text("Level: " + level + "/10");
 
         // Generate enemies at random positions
         generateEnemies();
