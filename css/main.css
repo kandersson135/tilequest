@@ -92,7 +92,7 @@ body {
   font-family: 'Dokdo', cursive;
   font-size: 45px;
   position: absolute;
-  left: 20px;
+  left: 100px;
   top: -20px;
 }
 
@@ -101,18 +101,41 @@ body {
   font-family: 'Dokdo', cursive;
   font-size: 24px;
   position: absolute;
-  left: 35px;
+  left: 115px;
   top: 35px;
 }
 
 #how-to-play {
-	color: #fff;
+	background:#bdaa97;
+  box-shadow:inset 2px 2px 2px 0 #353540;
+  border:2px solid #eee4da;
+  border-radius: 3px;
+	color: #353540;
 	font-family: 'Dokdo', cursive;
 	font-size: 20px;
 	position: absolute;
+	padding: 10px;
 	top: 130px;
 	left:50px;
 	width:300px;
+}
+
+#how-to-play span {
+	background: #353540;
+	box-shadow:inset 0px 5px 1px 0 rgba(500,500,500,0.1);
+	border:2px solid #eee4da;
+	border-radius: 3px;
+	color:#fff;
+	font-family: 'Dokdo', cursive;
+	font-weight:normal;
+	font-size: 32px;
+	margin: 0 auto;
+	position: relative;
+	top: -20px;
+	padding: 3px 5px;
+	width:180px;
+	height: 20px;
+	line-height: 22px;
 }
 
 #version-info {
@@ -210,8 +233,12 @@ body {
 
 	#how-to-play {
 		left: 20px;
-		width: 240px;
+		width: 220px;
 		font-size: 18px;
+	}
+
+	#how-to-play span {
+		font-size: 22px;
 	}
 
 	#character-info {
