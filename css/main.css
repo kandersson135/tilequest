@@ -40,7 +40,7 @@ body {
 }
 
 
-.teacher {
+.hero {
     background-image: url(../img/hero-idle.gif);
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -50,7 +50,7 @@ body {
 }
 
 .enemy {
-    background-image: url(../img/green-slime.gif);
+	background-image: url(../img/green-slime.gif);
     background-size: contain;
     background-repeat: no-repeat;
     width: 32px;
@@ -58,8 +58,11 @@ body {
 }
 
 .life-container {
-    text-align: center;
-    margin-top: 20px;
+    margin: 0 auto;
+	margin-top: -30px;
+	position: relative;
+	left: 200px;
+	width: 130px;
 }
 
 .life-icon {
@@ -77,9 +80,11 @@ body {
   color: #fff;
   font-family: 'Dokdo', cursive;
   font-size: 32px;
-  position: absolute;
-  right: 200px;
-  top: 100px;
+  margin: 0 auto;
+  margin-top: -25px;
+  position: relative;
+  right: 180px;
+  width: 160px;
 }
 
 #game-title {
@@ -87,27 +92,27 @@ body {
   font-family: 'Dokdo', cursive;
   font-size: 45px;
   position: absolute;
-  left: 100px;
-  top: 30px;
+  left: 20px;
+  top: -20px;
 }
 
 #game-subtitle {
-  color: yellow;
+  color: #ffff00;
   font-family: 'Dokdo', cursive;
   font-size: 24px;
   position: absolute;
-  left: 115px;
-  top: 80px;
+  left: 35px;
+  top: 35px;
 }
 
 #how-to-play {
 	color: #fff;
 	font-family: 'Dokdo', cursive;
-	font-size: 18px;
+	font-size: 20px;
 	position: absolute;
 	top: 130px;
-	left:100px;
-	width:250px;
+	left:50px;
+	width:300px;
 }
 
 #version-info {
@@ -116,7 +121,31 @@ body {
   font-family: 'Dokdo', cursive;
   font-size: 10px;
   position: absolute;
-  text-shadow: 1px 1px 0 #555;
+}
+
+#character-info {
+	position: absolute;
+	top:50px;
+	right: 100px;
+	width: 300px;
+}
+
+.character-img {
+	float: left;
+	margin-right:10px;
+}
+
+#character-title {
+	color: #fff;
+	font-family: 'Dokdo', cursive;
+	font-size: 24px;
+}
+
+.character-desc {
+	color: #fff;
+	font-family: 'Dokdo', cursive;
+	font-size: 18px;
+	margin-top: -2px;
 }
 
 /* MODAL BOX */
@@ -125,12 +154,13 @@ body {
   box-shadow:inset 2px 2px 2px 0 #353540;
   border:2px solid #eee4da;
   border-radius: 3px;
-  width: 350px;
+  width: 320px;
   margin-top: -220px;
 }
 
 .swal-title {
 	background: #353540;
+	box-shadow:inset 0px 5px 1px 0 rgba(500,500,500,0.1);
 	border:2px solid #eee4da;
 	border-radius: 3px;
 	color:#fff;
@@ -140,6 +170,8 @@ body {
 	margin: 0 auto;
 	margin-top:-30px !important;
 	width:180px;
+	height: 20px;
+	line-height: 22px;
 }
 
 .swal-text {
@@ -166,23 +198,25 @@ body {
 
 /* iPad styles */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
-	#level-display {
-	  right:80px;
-	  top: 100px;
-	}
-
 	#game-title {
-	  left: 20px;
-	  top: 20px;
+	  left:20px;
+	  top: -20px;
 	}
 
 	#game-subtitle {
-	  left: 20px;
-	  top: 80px;
+	  left: 40px;
+	  top: 40px;
 	}
 
 	#how-to-play {
 		left: 20px;
 		width: 240px;
+		font-size: 18px;
+	}
+	
+	#character-info {
+		right: 10px;
+		width: 230px;
+		top:20px;
 	}
 }
