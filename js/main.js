@@ -1,80 +1,79 @@
 $(document).ready(function() {
-    let level = 1;
-    const boardSize = 15; // Fixed number of square tiles in each row
-    let numEnemies = 3 + level; // Number of enemies on the board
-    let maxLives = 5; // Maximum lives for the hero
+  let level = 1;
+  const boardSize = 15; // Fixed number of square tiles in each row
+  let numEnemies = 3 + level; // Number of enemies on the board
+  let maxLives = 5; // Maximum lives for the hero
 
-    let heroPosition = { row: 0, col: 0 }; // Initial hero position
-    let lives = maxLives; // Current number of lives
-    let enemies = []; // Array to store enemy positions
-	
+  let heroPosition = { row: 0, col: 0 }; // Initial hero position
+  let lives = maxLives; // Current number of lives
+  let enemies = []; // Array to store enemy positions
+
 	let swordSound = new Audio("audio/sword-attack.wav");
 	let stepSound = new Audio("audio/step.wav");
 	let hurtSound = new Audio("audio/hurt.mp3");
 	let levelUpSound = new Audio("audio/level-up.wav");
-	
+
 	let enemyImages = [
 		'url(img/green-slime.gif)',
 		'url(img/pink-slime.gif)',
-		'url(img/white-slime.gif)',
+		'url(img/mushroom.gif)',
 		'url(img/yellow-slime.gif)',
+		'url(img/white-slime.gif)',
+		'url(img/snail.gif)',
+		'url(img/pink-slime.gif)',
 		'url(img/zombie.gif)',
 		'url(img/green-slime.gif)',
-		'url(img/pink-slime.gif)',
-		'url(img/white-slime.gif)',
-		'url(img/yellow-slime.gif)',
 		'url(img/ogre.gif)'
 	];
-	
+
 	swordSound.volume = 0.3;
 	stepSound.volume = 0.3;
 	hurtSound.volume = 0.3;
 	levelUpSound.volume = 0.1;
 
-    // Generate square tiles
-    generateGameBoard();
+  // Generate square tiles
+  generateGameBoard();
 
-    // Generate enemies at random positions
-    generateEnemies();
+  // Generate enemies at random positions
+  generateEnemies();
 
-    // Add hero to the initial position
-    updateHeroPosition();
-    
-    // Generate lives
-    updateLives();
-    
-    // Display current level
-    $('#level-display').text("Level: " + level + "/10");
-	
-    // Handle tile click event
-    $('.tile').click(function() {
-        const clickedRow = $(this).data('row');
-        const clickedCol = $(this).data('col');
-        const newPosition = { row: clickedRow, col: clickedCol };
+  // Add hero to the initial position
+  updateHeroPosition();
 
-        if (isValidPosition(newPosition) && isAdjacentPosition(newPosition, heroPosition)) {
-            heroPosition = newPosition;
-            updateHeroPosition();
-            moveEnemiesCloser();
-			stepSound.play();
+  // Generate lives
+  updateLives();
 
-            checkCollisions();
+  // Display current level
+  $('#level-display').text("Level: " + level + "/10");
+
+  // Handle tile click event
+  $('.tile').click(function() {
+      const clickedRow = $(this).data('row');
+      const clickedCol = $(this).data('col');
+      const newPosition = { row: clickedRow, col: clickedCol };
+
+      if (isValidPosition(newPosition) && isAdjacentPosition(newPosition, heroPosition)) {
+          heroPosition = newPosition;
+          updateHeroPosition();
+          moveEnemiesCloser();
+          stepSound.play();
+
+          checkCollisions();
         } else if (isInRangeOfAttack(newPosition, heroPosition)) {
-			$('.hero').css('background-image','url(img/hero-attack.gif)');
-			$('.hero').css('background-size','auto');
-			
-			setTimeout(function() { 
-				swordSound.play();
-			}, 200);
-			
-			setTimeout(function() { 
-				$('.hero').css('background-image','url(img/hero-idle.gif)');
-				
-				killEnemy(newPosition);
-			}, 600);
-            
-        }
-    });
+          $('.hero').css('background-image','url(img/hero-attack.gif)');
+          $('.hero').css('background-size','auto');
+
+  			setTimeout(function() {
+  				swordSound.play();
+  			}, 200);
+
+  			setTimeout(function() {
+  				$('.hero').css('background-image','url(img/hero-idle.gif)');
+
+  				killEnemy(newPosition);
+  			}, 600);
+      }
+  });
 
     function generateGameBoard() {
         for (let row = 0; row < boardSize; row++) {
@@ -84,7 +83,7 @@ $(document).ready(function() {
             }
         }
     }
-	
+
 	function getEnemyImage(level) {
 		let index = level - 1;
 
@@ -155,12 +154,12 @@ $(document).ready(function() {
                 if (lives <= 0) {
                     // Game over condition
                     //alert('Game over!');
-					
+
 					swal({
 					  title: "Game over!",
 					  text: "You lost all your lives :/",
 					});
-					
+
                     resetGame();
                 } else {
                     // Remove the enemy if it catches the hero
@@ -188,7 +187,7 @@ $(document).ready(function() {
                 //level++;
                 //numEnemies = 3 + level;
 				levelUpSound.play();
-                //alert(`Level ${level} completed!`);			
+                //alert(`Level ${level} completed!`);
                 levelUp();
             }
         }
@@ -217,9 +216,9 @@ $(document).ready(function() {
             enemies.some(e => e.row === enemy.row && e.col === enemy.col) ||
             (enemy.row === heroPosition.row && enemy.col === heroPosition.col)
         );
-		
-		const currentLevelEnemyImage = getEnemyImage(level);
-		
+
+        const currentLevelEnemyImage = getEnemyImage(level);
+
         enemies.push(enemy);
         $(`.tile[data-row=${enemy.row}][data-col=${enemy.col}]`).append('<div class="enemy" style="background-image:' + currentLevelEnemyImage + ';"></div>');
     }
@@ -229,7 +228,7 @@ $(document).ready(function() {
         let col = Math.floor(Math.random() * boardSize);
         return { row: row, col: col };
     }
-    
+
     function levelUp() {
         level++;
 		if (level % 5 === 0) {
@@ -243,7 +242,7 @@ $(document).ready(function() {
         enemies = [];
 
         $('.tile').empty();
-        
+
         $('#level-display').text("Level: " + level + "/10");
 
         // Generate enemies at random positions
@@ -261,7 +260,7 @@ $(document).ready(function() {
         enemies = [];
 
         $('.tile').empty();
-        
+
         $('#level-display').text("Level: " + level + "/10");
 
         // Generate enemies at random positions

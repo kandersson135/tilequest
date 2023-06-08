@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TileQuest: Dungeon Escape</title>
-	<meta charset="utf-8">
+  <title>TileQuest: Dungeon Escape</title>
+
+  <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<meta name="theme-color" content="#2f2f2e">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,16 +12,15 @@
 
 	<link rel="apple-touch-icon" href="img/webapp-icon.png">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-	
+
 	<!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-    <div id="game-bg">
-      <div class="game-board">
-      </div><!--end game-board -->
-    </div><!-- end game-bg -->
-	
+  <div id="game-bg">
+    <div class="game-board"></div><!--end game-board -->
+  </div><!-- end game-bg -->
+
 	<p id="how-to-play">
 		Game Instructions:<br><br>
 		- Play as the hero and conquer the dungeon's challenges.<br>
@@ -37,33 +37,39 @@
 		Make your way through the enemies and try to beat all levels.
 		-->
 	</p>
-	
-    <div id="level-display"></div>
-    <div class="life-container"></div>
-	
+
+  <div id="level-display"></div>
+  <div class="life-container"></div>
+
 	<h1 id="game-title">TileQuest:</h1>
-    <h2 id="game-subtitle">Dungeon Escape</h2>
-	
-	<div id="character-info">
-		<p id="character-title">Enemy types</p>
-	
-		<img src="img/green-slime.png" class="character-img">
-		<p class="character-desc">Slimes: These gelatinous creatures are known for their slimy bodies and unpredictable movements. Watch out for their acidic attacks!</p>
-		
-		<img src="img/zombie.png" class="character-img">
-		<p class="character-desc">Zombie: The undead beings are relentless in their pursuit. With decaying flesh and an insatiable hunger, they won't stop until they catch you.</p>
-		
-		<img src="img/ogre.png" class="character-img">
-		<p class="character-desc">Ogre: Towering and formidable, these mighty creatures wield immense strength. Beware their powerful strikes and strategize accordingly.</p>
-	</div>
-	
-	<div id="version-info">
-		<p>Version: 0.0.7</p>
-    </div>
-	
+  <h2 id="game-subtitle">Dungeon Escape</h2>
+
+  <div id="character-info">
+    <p id="character-title">Enemy types</p>
+
+    <img src="img/green-slime.png" class="character-img">
+    <p class="character-desc">Slime: Gelatinous creature with acidic attacks, swift and unpredictable.</p>
+
+    <img src="img/mushroom.png" class="character-img">
+    <p class="character-desc">Mushroom: Stationary enemy emitting toxic spores, a hazardous obstacle to navigate.</p>
+
+    <img src="img/snail.png" class="character-img">
+    <p class="character-desc">Snail: Slow-moving but resilient, armed with a protective shell, deceptive in appearance.</p>
+
+    <img src="img/zombie.png" class="character-img">
+    <p class="character-desc">Zombie: Relentless undead foe, driven by insatiable hunger, relentless pursuit.</p>
+
+    <img src="img/ogre.png" class="character-img">
+    <p class="character-desc">Ogre: Towering and mighty, wields immense strength, powerful strikes to watch out for.</p>
+  </div>
+
+  <div id="version-info">
+    <p>Version: 0.0.7</p>
+  </div>
+
 	<!-- js -->
-    <script src="js/jquery-3.6.0.min.js"></script>
-	<script src="js/sweetalert.min.js"></script>
-    <script src="js/main.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/sweetalert.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
