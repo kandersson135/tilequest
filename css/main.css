@@ -17,44 +17,44 @@ body {
     z-index: 1;
 }
 .game-board {
-    display: flex;
-    flex-wrap: wrap;
-    width: 480px;
-    height: 480px;
-    margin: 20px auto;
-    margin-top: 32px;
-    background-size: contain;
-    position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	width: 480px;
+	height: 480px;
+	margin: 20px auto;
+	margin-top: 32px;
+	background-size: contain;
+	position: relative;
 }
 
 .tile {
-    width: 32px;
-    height: 32px;
-    position: relative;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	width: 32px;
+	height: 32px;
+	position: relative;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	cursor: url(../img/cursor.png), auto;
 }
 
 
 .hero {
-    background-image: url(../img/hero-idle.gif);
+	background-image: url(../img/hero-idle.gif);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-    width: 32px;
-    height: 32px;
+	width: 32px;
+	height: 32px;
 }
 
 .enemy {
 	background-image: url(../img/green-slime.gif);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 32px;
-    height: 32px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
 }
 
 .life-container {

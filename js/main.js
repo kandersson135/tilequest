@@ -123,14 +123,14 @@ $(document).ready(function() {
     }
 
     function moveEnemiesCloser() {
-        enemies.forEach(function(enemy, index) {
-            const newPosition = getNewPosition(enemy, heroPosition);
-			const currentLevelEnemyImage = getEnemyImage(level);
-            if (isValidPosition(newPosition)) {
-                enemies[index] = newPosition;
-                $(`.tile[data-row=${enemy.row}][data-col=${enemy.col}] .enemy`).remove();
-                $(`.tile[data-row=${newPosition.row}][data-col=${newPosition.col}]`).append('<div class="enemy" style="background-image:' + currentLevelEnemyImage + ';"></div>');
-            }
+      enemies.forEach(function(enemy, index) {
+        const newPosition = getNewPosition(enemy, heroPosition);
+        const currentLevelEnemyImage = getEnemyImage(level);
+          if (isValidPosition(newPosition)) {
+              enemies[index] = newPosition;
+              $(`.tile[data-row=${enemy.row}][data-col=${enemy.col}] .enemy`).remove();
+              $(`.tile[data-row=${newPosition.row}][data-col=${newPosition.col}]`).append('<div class="enemy" style="background-image:' + currentLevelEnemyImage + ';"></div>');
+          }
         });
     }
 
@@ -149,16 +149,16 @@ $(document).ready(function() {
             if (enemy.row === heroPosition.row && enemy.col === heroPosition.col) {
                 lives--;
                 updateLives();
-				hurtSound.play();
+				        hurtSound.play();
 
                 if (lives <= 0) {
                     // Game over condition
                     //alert('Game over!');
 
-					swal({
-					  title: "Game over!",
-					  text: "You lost all your lives :/",
-					});
+          					swal({
+          					  title: "Game over!",
+          					  text: "You lost all your lives :/",
+          					});
 
                     resetGame();
                 } else {
@@ -177,17 +177,18 @@ $(document).ready(function() {
             if (level === 10) {
                 // Final level completed
                 //alert('Congratulations! You completed all levels!');
-				swal({
-				  title: "Good job!",
-				  text: "You completed all levels!",
-				});
+          			swal({
+          			  title: "Good job!",
+          			  text: "You completed all levels!",
+          			});
                 resetGame();
             } else {
                 // Level up
                 //level++;
                 //numEnemies = 3 + level;
-				levelUpSound.play();
                 //alert(`Level ${level} completed!`);
+
+                levelUpSound.play();
                 levelUp();
             }
         }
@@ -231,11 +232,16 @@ $(document).ready(function() {
 
     function levelUp() {
         level++;
-		if (level % 5 === 0) {
-			lives++; // Add an extra heart every 5th level
-			updateLives();
-		}
-        numEnemies = 3 + level;
+    		if (level % 5 === 0) {
+    			lives++; // Add an extra heart every 5th level
+    			updateLives();
+    		}
+
+        //numEnemies = 3 + level;
+        if (level % 2 === 0) {
+            numEnemies += 1; // Add an extra enemy every other level
+        }
+
         //lives = maxLives;
         updateLives();
         heroPosition = { row: 0, col: 0 };
