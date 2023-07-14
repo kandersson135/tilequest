@@ -60,7 +60,7 @@ body {
 }
 
 .life-container {
-    margin: 0 auto;
+	margin: 0 auto;
 	margin-top: -30px;
 	position: relative;
 	left: 200px;
@@ -68,13 +68,13 @@ body {
 }
 
 .life-icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url(../img/heart.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 5px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-image: url(../img/heart.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-right: 5px;
 }
 
 
@@ -85,8 +85,8 @@ body {
   margin: 0 auto;
   margin-top: -25px;
   position: relative;
-  right: 180px;
-  width: 160px;
+  right: 170px;
+  width: 180px;
 }
 
 #game-title {
