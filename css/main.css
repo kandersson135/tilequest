@@ -17,6 +17,7 @@ body {
     position: relative;
     z-index: 1;
 }
+
 .game-board {
 	display: flex;
 	flex-wrap: wrap;
