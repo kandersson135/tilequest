@@ -11,6 +11,7 @@ body {
     width: 544px;
     height: 544px;
     margin: 20px auto;
+		margin-top: 50px;
     background-image: url(../img/map.png);
     background-size: contain;
     position: relative;
