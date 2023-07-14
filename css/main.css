@@ -150,14 +150,15 @@ body {
 
 #character-info {
 	position: absolute;
-	top:50px;
+	top: 50px;
 	right: 100px;
 	width: 300px;
 }
 
 .character-img {
 	float: left;
-	margin-right:10px;
+	margin-right: 10px;
+	width: 32px;
 }
 
 #character-title {
@@ -169,9 +170,9 @@ body {
 .character-desc {
 	color: #fff;
 	font-family: 'Dokdo', cursive;
-	font-size: 18px;
-	margin-top: -2px;
+	font-size: 20px;
 }
+
 
 /* MODAL BOX */
 .swal-modal {

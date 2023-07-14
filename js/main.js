@@ -16,14 +16,14 @@ $(document).ready(function() {
 	let enemyImages = [
 		'url(img/green-slime.gif)',
 		'url(img/pink-slime.gif)',
-		'url(img/mushroom.gif)',
 		'url(img/yellow-slime.gif)',
 		'url(img/white-slime.gif)',
-		'url(img/snail.gif)',
+    'url(img/green-slime.gif)',
 		'url(img/pink-slime.gif)',
-		'url(img/zombie.gif)',
-		'url(img/green-slime.gif)',
-		'url(img/ogre.gif)'
+		'url(img/yellow-slime.gif)',
+		'url(img/white-slime.gif)',
+    'url(img/green-slime.gif)',
+		'url(img/pink-slime.gif)'
 	];
 
 	swordSound.volume = 0.3;
