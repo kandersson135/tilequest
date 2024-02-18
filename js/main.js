@@ -75,14 +75,14 @@ $(document).ready(function() {
       }
   });
 
-    function generateGameBoard() {
-        for (let row = 0; row < boardSize; row++) {
-            for (let col = 0; col < boardSize; col++) {
-                let tileHTML = `<div class="tile" data-row="${row}" data-col="${col}"></div>`;
-                $('.game-board').append(tileHTML);
-            }
-        }
-    }
+  function generateGameBoard() {
+      for (let row = 0; row < boardSize; row++) {
+          for (let col = 0; col < boardSize; col++) {
+              let tileHTML = `<div class="tile" data-row="${row}" data-col="${col}"></div>`;
+              $('.game-board').append(tileHTML);
+          }
+      }
+  }
 
 	function getEnemyImage(level) {
 		let index = level - 1;
