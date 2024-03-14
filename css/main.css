@@ -41,7 +41,6 @@ body {
 	cursor: url(../img/cursor.png), auto;
 }
 
-
 .hero {
 	background-image: url(../img/hero-idle.gif);
 	background-size: contain;
@@ -60,11 +59,14 @@ body {
 }
 
 .life-container {
+	color: #fff;
+  font-family: 'Dokdo', cursive;
+  font-size: 32px;
 	margin: 0 auto;
-	margin-top: -30px;
+	margin-top: -38px;
 	position: relative;
-	left: 200px;
-	width: 130px;
+	left: 160px;
+	width: 220px;
 }
 
 .life-icon {
@@ -148,31 +150,32 @@ body {
   position: absolute;
 }
 
-#character-info {
+#hiscore-info {
 	position: absolute;
 	top: 50px;
 	right: 100px;
 	width: 300px;
 }
 
-.character-img {
-	float: left;
-	margin-right: 10px;
-	width: 32px;
+#hiscore-title {
+	border-bottom: 2px solid #fff;
+	color: #fff;
+	font-family: 'Dokdo', cursive;
+	font-size: 32px;
+	margin: 0;
+	padding-bottom: 0;
 }
 
-#character-title {
+#hiscore-info ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#hiscore-info ul li {
 	color: #fff;
 	font-family: 'Dokdo', cursive;
 	font-size: 24px;
 }
-
-.character-desc {
-	color: #fff;
-	font-family: 'Dokdo', cursive;
-	font-size: 20px;
-}
-
 
 /* MODAL BOX */
 .swal-modal {
@@ -225,7 +228,7 @@ body {
 /* iPad styles */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
 	#game-title {
-	  left:20px;
+	  left: 20px;
 	  top: -20px;
 	}
 
@@ -244,9 +247,33 @@ body {
 		font-size: 22px;
 	}
 
-	#character-info {
+	#hiscore-info {
 		right: 10px;
 		width: 230px;
 		top:20px;
+	}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: portrait) {
+	#game-bg {
+		margin-top: 150px;
+	}
+
+	#game-title {
+	  left: 38%;
+	  top: -20px;
+	}
+
+	#game-subtitle {
+	  left: 40%;
+	  top: 40px;
+	}
+
+	#how-to-play {
+		display: none
+	}
+
+	#hiscore-info {
+		display: none;
 	}
 }

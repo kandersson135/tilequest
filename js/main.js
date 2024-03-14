@@ -26,6 +26,9 @@ $(document).ready(function() {
 		'url(img/pink-slime.gif)'
 	];
 
+  let highScores = [
+  ];
+
 	swordSound.volume = 0.3;
 	stepSound.volume = 0.3;
 	hurtSound.volume = 0.3;
@@ -43,8 +46,11 @@ $(document).ready(function() {
   // Generate lives
   updateLives();
 
+  // Display hi-score list
+  displayHighScores();
+
   // Display current level
-  $('#level-display').text("Level: " + level + "/10");
+  $('#level-display').text("Level: " + level);
 
   // Handle tile click event
   $('.tile').click(function() {
@@ -143,6 +149,30 @@ $(document).ready(function() {
         return { row: newRow, col: newCol };
     }
 
+    // Function to display high scores in a list
+    function displayHighScores() {
+      const list = document.getElementById('hiscore-list');
+
+      // Clear existing list items
+      while (list.firstChild) {
+        list.firstChild.remove();
+      }
+
+      // Retrieve high scores from local storage
+      const savedHighScores = JSON.parse(localStorage.getItem('tq-highScores'));
+
+      if (savedHighScores) {
+        highScores = savedHighScores;
+
+        // Iterate through high scores and create list items
+        highScores.forEach((score, index) => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${index + 1}. ${score.name} - ${score.score}`;
+          list.appendChild(listItem);
+        });
+      }
+    }
+
     function checkCollisions() {
         // Check if the hero and any enemy occupy the same position
         enemies.forEach(function(enemy) {
@@ -152,28 +182,49 @@ $(document).ready(function() {
 				        hurtSound.play();
 
                 if (lives <= 0) {
-                    // Game over condition
-                    //alert('Game over!');
+                  // Game over
+                  setTimeout(function(){
+                    // Prompt the player to enter their name
+                    const playerName = prompt('Enter your name:');
 
-          					swal({
-          					  title: "Game over!",
-          					  text: "You lost all your lives :/",
-          					});
+                    // Only proceed if the player entered a name
+                    if (playerName) {
+                      // Create a new object with the player's name and score
+                      const playerScore = { name: playerName, score: level };
 
-                    resetGame();
-                } else {
-                    // Remove the enemy if it catches the hero
-                    const index = enemies.findIndex(e => e.row === enemy.row && e.col === enemy.col);
-                    if (index !== -1) {
-                        enemies.splice(index, 1);
-                        $(`.tile[data-row=${enemy.row}][data-col=${enemy.col}] .enemy`).remove();
+                      // Add the player's score to the high scores array
+                      highScores.push(playerScore);
+
+                      // Sort the high scores array
+                      highScores.sort((a, b) => b.score - a.score);
+
+                      // Limit the number of high scores
+                      const maxHighScores = 10;
+                      highScores = highScores.slice(0, maxHighScores);
+
+                      // Save the updated high scores
+                      localStorage.setItem('tq-highScores', JSON.stringify(highScores));
+
+                      window.location.reload();
+                    } else {
+                      window.location.reload();
                     }
+                  }, 800);
+
+                } else {
+                  // Remove the enemy if it catches the hero
+                  const index = enemies.findIndex(e => e.row === enemy.row && e.col === enemy.col);
+                  if (index !== -1) {
+                      enemies.splice(index, 1);
+                      $(`.tile[data-row=${enemy.row}][data-col=${enemy.col}] .enemy`).remove();
+                  }
                 }
             }
         });
 
         if (heroPosition.row === boardSize - 1 && heroPosition.col === boardSize - 1) {
             // Level up condition
+            /*
             if (level === 10) {
                 // Final level completed
                 //alert('Congratulations! You completed all levels!');
@@ -191,6 +242,10 @@ $(document).ready(function() {
                 levelUpSound.play();
                 levelUp();
             }
+            */
+
+            levelUpSound.play();
+            levelUp();
         }
     }
 
@@ -204,6 +259,7 @@ $(document).ready(function() {
 
     function updateLives() {
         $('.life-container').empty();
+        $('.life-container').prepend('Lives: ');
         for (let i = 0; i < lives; i++) {
             $('.life-container').append('<div class="life-icon"></div>');
         }
@@ -249,7 +305,7 @@ $(document).ready(function() {
 
         $('.tile').empty();
 
-        $('#level-display').text("Level: " + level + "/10");
+        $('#level-display').text("Level: " + level);
 
         // Generate enemies at random positions
         generateEnemies();
@@ -267,7 +323,7 @@ $(document).ready(function() {
 
         $('.tile').empty();
 
-        $('#level-display').text("Level: " + level + "/10");
+        $('#level-display').text("Level: " + level);
 
         // Generate enemies at random positions
         generateEnemies();
