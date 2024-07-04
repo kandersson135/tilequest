@@ -330,4 +330,9 @@ $(document).ready(function() {
 
         updateHeroPosition();
     }
+
+    // How-to-button
+    $('#how-to-btn').click(function() {
+      swal("How to play", "Play as the hero and try to escape all levels of the dungeon. Click on the tile next to the hero to move him there.\n\n  Everytime the hero makes a move, the enemies move one step closer to the hero. If an enemy is two tiles away from the hero, he can attack it by clicking it. \n\n Make your way through the enemies and try to beat all levels.");
+    });
 });
