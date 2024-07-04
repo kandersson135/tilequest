@@ -281,9 +281,9 @@ body {
 	}
 
 	#hiscore-info {
-		right: 10px;
+		left: 10px;
 		width: 230px;
-		top:20px;
+		top: 150px;
 	}
 }
 
