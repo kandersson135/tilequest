@@ -63,6 +63,7 @@ $(document).ready(function() {
       heroPosition = newPosition;
       updateHeroPosition();
       moveEnemiesCloser();
+      stepSound.currentTime = 0;
       stepSound.play();
 
       checkCollisions();
@@ -71,6 +72,7 @@ $(document).ready(function() {
         $('.hero').css('background-size','auto');
 
 			setTimeout(function() {
+        swordSound.currentTime = 0;
 				swordSound.play();
 			}, 200);
 
