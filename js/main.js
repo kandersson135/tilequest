@@ -227,35 +227,41 @@ $(document).ready(function() {
         setTimeout(() => $('.hero').removeClass('hit'), 300);
 
         if (lives <= 0) {
-          // Game over
-          setTimeout(function(){
-            // Prompt the player to enter their name
-            const playerName = prompt('Enter your name:');
+          setTimeout(function () {
+              swal({
+                  title: "Game Over!",
+                  text: "Enter your name:",
+                  content: "input",
+                  button: {
+                      text: "Save Score",
+                      closeModal: true
+                  }
+              }).then(playerName => {
 
-            // Only proceed if the player entered a name
-            if (playerName) {
-              // Create a new object with the player's name and score
-              const playerScore = { name: playerName, score: level };
+                  // Om spelaren trycker Cancel eller lämnar tomt → ladda om
+                  if (!playerName) {
+                      window.location.reload();
+                      return;
+                  }
 
-              // Add the player's score to the high scores array
-              highScores.push(playerScore);
+                  // Spara spelarnamnet + level
+                  const playerScore = { name: playerName, score: level };
+                  highScores.push(playerScore);
 
-              // Sort the high scores array
-              highScores.sort((a, b) => b.score - a.score);
+                  // Sortera highscore
+                  highScores.sort((a, b) => b.score - a.score);
 
-              // Limit the number of high scores
-              const maxHighScores = 10;
-              highScores = highScores.slice(0, maxHighScores);
+                  // Begränsa listan
+                  const maxHighScores = 10;
+                  highScores = highScores.slice(0, maxHighScores);
 
-              // Save the updated high scores
-              localStorage.setItem('tq-highScores', JSON.stringify(highScores));
+                  // Spara i localStorage
+                  localStorage.setItem('tq-highScores', JSON.stringify(highScores));
 
-              window.location.reload();
-            } else {
-              window.location.reload();
-            }
+                  // Ladda om spelet
+                  window.location.reload();
+              });
           }, 800);
-
         } else {
           // Remove the enemy if it catches the hero
           const index = enemies.findIndex(e => e.row === enemy.row && e.col === enemy.col);

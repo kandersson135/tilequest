@@ -291,6 +291,25 @@ body {
 .swal-button:hover {background:#353540 !important;}
 .swal-button:active {position:relative; top:3px;}
 
+.swal-content__input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  margin-top: 6px;
+  border-radius: 3px;
+  border: 2px solid #353540;
+  background: #eee4da;
+  color: #353540;
+  font-family: 'Dokdo', cursive;
+  font-size: 20px;
+  outline: none;
+}
+
+.swal-content__input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(53, 53, 64, 0.5);
+}
+
 /* iPad styles */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
 	#game-title {
