@@ -184,56 +184,58 @@ body {
 }
 
 #hiscore-info {
-	background:#bdaa97;
-  box-shadow:inset 2px 2px 2px 0 #353540;
-  border:2px solid #eee4da;
-  border-radius: 3px;
-	color: #353540;
-	font-family: 'Dokdo', cursive;
-	font-size: 20px;
-	position: absolute;
-	padding: 10px;
-	top: 130px;
-	left:50px;
-	width:250px;
+  background: #bdaa97;
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 3px solid #eee4da;
+  border-radius: 8px;
+  color: #353540;
+  font-family: 'Dokdo', cursive;
+  font-size: 21px;
+  position: absolute;
+  padding: 10px 16px 18px;
+  top: 130px;
+  left: 50px;
+  width: 260px;
 }
 
+/* Tabbad titel */
 #hiscore-title {
-	background: #353540;
-	box-shadow:inset 0px 5px 1px 0 rgba(500,500,500,0.1);
-	border:2px solid #eee4da;
-	border-radius: 3px;
-	color:#fff;
-	font-family: 'Dokdo', cursive;
-	font-weight:normal;
-	font-size: 32px;
+  background: #353540;
+  border: 3px solid #eee4da;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 28px;
+  padding: 4px 16px;
+  text-align: center;
 	margin: 0 auto;
-	position: relative;
-	top: -20px;
-	padding: 10px 8px;
-	width:170px;
-	height: 20px;
-	line-height: 22px;
+	margin-bottom: 20px;
+  box-shadow: inset 0 3px 2px rgba(255, 255, 255, 0.1);
+	width: 150px;
 }
 
+/* Listan */
 #hiscore-info ul {
-	margin-left: 10px;
-	list-style-type: none;
-	padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 #hiscore-info ul li {
-	color: #fff;
-	font-family: 'Dokdo', cursive;
-	font-size: 24px;
-	text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
+  font-size: 26px;
+  color: #353540;
+  margin-bottom: 10px;
+
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+
 
 #how-to-btn {
 	background: #353540;
-	box-shadow:inset 0px 5px 1px 0 rgba(500,500,500,0.1);
+	box-shadow: inset 0 3px 2px rgba(255, 255, 255, 0.1);
 	border:2px solid #eee4da;
-	border-radius:3px;
+	border-radius:8px;
 	bottom: 10px;
 	color:#fff;
 	font-family: 'Dokdo', cursive;
@@ -245,41 +247,48 @@ body {
 	text-decoration: none;
 }
 
+#how-to-btn:active {bottom: 7px;}
+
 /* MODAL BOX */
 .swal-modal {
-  background:#bdaa97;
-  box-shadow:inset 2px 2px 2px 0 #353540;
-  border:2px solid #eee4da;
-  border-radius: 3px;
+	background: #bdaa97;
+  box-shadow:
+    inset 2px 2px 2px 0 #353540,
+    0 8px 18px rgba(0, 0, 0, 0.35);
+  border: 2px solid #eee4da;
+  border-radius: 8px;
+  padding: 0;
 }
 
 .swal-title {
-	background: #353540;
-	box-shadow:inset 0px 5px 1px 0 rgba(500,500,500,0.1);
-	border:2px solid #eee4da;
-	border-radius: 3px;
-	color:#fff;
-	font-family: 'Dokdo', cursive;
-	font-weight:normal;
-	font-size: 32px;
-	margin: 0 auto;
-	margin-top:-30px !important;
-	width:180px;
-	height: 20px;
-	line-height: 22px;
+	display: block;
+  background: #353540;
+  box-shadow: inset 0 4px 1px 0 rgba(255, 255, 255, 0.08);
+  border: 2px solid #eee4da;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Dokdo', cursive;
+  font-weight: normal;
+  font-size: 32px;
+  padding: 4px 18px;
+  margin: 0 auto 10px;
+  text-align: center;
+	width: 50%;
 }
 
 .swal-text {
-  color:#353540;
+	color: #353540;
   font-family: 'Dokdo', cursive;
-  font-size:24px;
+  font-size: 24px;
+  text-align: center;
+  margin: 10px 0 16px;
 }
 
 .swal-button {
 	background: #353540;
-	box-shadow:inset 0px 5px 1px 0 rgba(500,500,500,0.1);
+	box-shadow: inset 0 4px 1px 0 rgba(255, 255, 255, 0.08);
 	border:2px solid #eee4da;
-	border-radius:3px;
+	border-radius:8px;
 	color:#fff;
 	font-family: 'Dokdo', cursive;
 	font-weight:normal;
