@@ -205,7 +205,7 @@ $(document).ready(function() {
       // Iterate through high scores and create list items
       highScores.forEach((score, index) => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${index + 1}. ${score.name} - ${score.score}`;
+        listItem.textContent = `${index + 1}. ${score.name} - Lv. ${score.score}`;
         list.appendChild(listItem);
       });
     } else {
