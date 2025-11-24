@@ -164,19 +164,60 @@ $(document).ready(function() {
     //highlightMovesAndAttacks();
   }
 
-  function moveEnemiesCloser() {
-    enemies.forEach(function(enemy, index) {
-      const newPosition = getNewPosition(enemy, heroPosition);
-      const currentLevelEnemyImage = getEnemyImage(level);
-        if (isValidPosition(newPosition)) {
-          enemies[index] = newPosition;
-          $(`.tile[data-row=${enemy.row}][data-col=${enemy.col}] .enemy`).remove();
-          $(`.tile[data-row=${newPosition.row}][data-col=${newPosition.col}]`).append('<div class="enemy" style="background-image:' + currentLevelEnemyImage + ';"></div>');
-        }
-      });
-
-      updateEnemyHighlights();
+  function isTileOccupiedByEnemy(pos) {
+    return enemies.some(e => e.row === pos.row && e.col === pos.col);
   }
+
+  function moveEnemiesCloser() {
+    // 1. Räkna ut föreslagen position för varje fiende
+    const proposedPositions = enemies.map(enemy => {
+      const newPos = getNewPosition(enemy, heroPosition);
+      // Om rutan inte är giltig: stå kvar
+      return isValidPosition(newPos) ? newPos : enemy;
+    });
+
+    const occupied = {};
+    const finalEnemies = enemies.map((enemy, index) => {
+      const proposed = proposedPositions[index];
+      const key = proposed.row + ',' + proposed.col;
+
+      // Om någon annan fiende redan tagit den här mål-rutan → stå kvar
+      if (occupied[key]) {
+        return enemy; // behåll gamla positionen
+      } else {
+        occupied[key] = true;
+        return proposed;
+      }
+    });
+
+    // Uppdatera enemies-arrayen
+    enemies = finalEnemies;
+
+    // Rita om alla fiender på brädet
+    $('.enemy').remove();
+    const currentLevelEnemyImage = getEnemyImage(level);
+
+    enemies.forEach(enemy => {
+      $(`.tile[data-row=${enemy.row}][data-col=${enemy.col}]`)
+        .append('<div class="enemy" style="background-image:' + currentLevelEnemyImage + ';"></div>');
+    });
+
+    updateEnemyHighlights();
+  }
+
+  // function moveEnemiesCloser() {
+  //   enemies.forEach(function(enemy, index) {
+  //     const newPosition = getNewPosition(enemy, heroPosition);
+  //     const currentLevelEnemyImage = getEnemyImage(level);
+  //       if (isValidPosition(newPosition)) {
+  //         enemies[index] = newPosition;
+  //         $(`.tile[data-row=${enemy.row}][data-col=${enemy.col}] .enemy`).remove();
+  //         $(`.tile[data-row=${newPosition.row}][data-col=${newPosition.col}]`).append('<div class="enemy" style="background-image:' + currentLevelEnemyImage + ';"></div>');
+  //       }
+  //     });
+  //
+  //     updateEnemyHighlights();
+  // }
 
   function getNewPosition(currentPosition, targetPosition) {
     const rowDiff = targetPosition.row - currentPosition.row;
